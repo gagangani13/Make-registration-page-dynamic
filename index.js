@@ -1,20 +1,27 @@
-const posts=[]
-function createPost(user){
+console.log("person1:Entered theatre")
+console.log("person2:Entered theatre")
+const Dadisontheway=new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        resolve('person3:Got ticket')
+    },2000)
+})
+const getPopcorn=Dadisontheway.then((t)=>{
     return new Promise((resolve,reject)=>{
-        posts.push(user)
-    resolve()
+        resolve(`${t}, bought Popcorn`)
     })
-}
-var c=0
-function setTime(){
+})
+const addButter=getPopcorn.then((t)=>{
     return new Promise((resolve,reject)=>{
-        posts[c].timing=new Date()
-        resolve()
-        c++
+        resolve(`${t}, added butter`)
     })
-}
-const user=['username:Gagan']
-const user2=['username:Gani']
-Promise.all([createPost(user),setTime()])
-Promise.all([createPost(user2),setTime()])
-console.log(posts)
+})
+const getColdDrinks =addButter.then((t)=>{
+    return new Promise((resolve,reject)=>{
+        resolve(`${t}, got cold drinks and Entered theatre`)
+    })
+})
+getColdDrinks.then((t)=>{
+    console.log(t)
+})
+console.log("person4:Entered theatre")
+console.log("person5:Entered theatre")
