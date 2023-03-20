@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+    crossorigin="anonymous"
+    />
+    <style>
+        .customisecolor{
+            background-color: rgba(207, 151, 31, 0.795);
+            /* color: black !important;
+            background-image: url(phone.jfif);
+            background-size: cover; */
+            
+        }
+    </style>
+</head>
+<body>   
+    <form id='myform'class="customisecolor">
+        <h1 style="color:rgb(221, 151, 21);background-color: rgb(86, 94, 88);">Book a call</h1>
+        <p1>Book a call slot and our representatives will call you back.</p1>
+        <hr>
+        <div class="input-group mb-3 " >
+            <label for="Name" class="input-group-text" >Name:</label>
+            <input type="text"class="form-control" id="Name" name="Name" value="" required>
+        </div>
+        <div class="input-group mb-3"> 
+            <label for="mail" class="input-group-text">Email:</label>
+            <input type="email" class="form-control"id="mail" name="mail" value="" required>
+        </div>
+        <div class="input-group mb-3">    
+            <label for="phone"class="input-group-text" >Phone:</label>
+            <input type="tel" class="form-control"id="phone" name="phone" value="" pattern="[0-9]{10}" required>
+        </div>
+        <div class="input-group mb-3">
+            <label for="call" class="input-group-text" >Call me on:</label>
+            <input type="datetime-local"class="form-control" id="call" name="call back" required>
+        </div> 
+        <div class=" mb-3 text-center">   
+            <button class="btn btn-success" id="btn" >Schedule</button> 
+        </div>
+        <div class="onscreen"style="background-color: darkgrey;">
+            <label for="scheduled">Scheduled calls are shown below:</label>
+            <ul class="addhere"></ul>
+        </div>
+    </form> 
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src='index.js'>
+    </script>    
+    
+</body>
+</html>
